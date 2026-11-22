@@ -39,6 +39,10 @@ typedef NS_ENUM(int32_t, ORTTensorElementDataType) {
   ORTTensorElementDataTypeInt64,
   ORTTensorElementDataTypeUInt64,
   ORTTensorElementDataTypeString,
+  // PitchNotes mirror addition (X-014, 2026-11-22): upstream subset lacked
+  // Double — SwiftF0's pitch output is tensor(double). Appended LAST so all
+  // existing enum VALUES stay stable (implicit NS_ENUM numbering).
+  ORTTensorElementDataTypeDouble,
 };
 
 /**

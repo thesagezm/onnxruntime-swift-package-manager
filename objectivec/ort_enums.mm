@@ -55,6 +55,11 @@ constexpr TensorElementTypeInfo kElementTypeInfos[]{
     {ORTTensorElementDataTypeInt64, ONNX_TENSOR_ELEMENT_DATA_TYPE_INT64, sizeof(int64_t)},
     {ORTTensorElementDataTypeUInt64, ONNX_TENSOR_ELEMENT_DATA_TYPE_UINT64, sizeof(uint64_t)},
     {ORTTensorElementDataTypeString, ONNX_TENSOR_ELEMENT_DATA_TYPE_STRING, std::nullopt},
+    // PitchNotes mirror addition (X-014, 2026-11-22): mapping for the Double
+    // case appended to ort_enums.h — ONNX_TENSOR_ELEMENT_DATA_TYPE_DOUBLE (=11)
+    // is part of the standard ONNX C API enum; pod archives untouched (the
+    // objectivec wrapper builds from source).
+    {ORTTensorElementDataTypeDouble, ONNX_TENSOR_ELEMENT_DATA_TYPE_DOUBLE, sizeof(double)},
 };
 
 struct GraphOptimizationLevelInfo {
